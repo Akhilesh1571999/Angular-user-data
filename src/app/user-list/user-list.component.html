@@ -1,0 +1,26 @@
+<h2>User-list</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>first_name</th>
+            <th>last_name</th>
+            <th>current_address</th>
+            <th>permanent_address</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor ="let user of users">
+            <td> {{user.first_name}}</td>
+            <td> {{user.last_name}}</td>
+            <td> {{user.current_address}}</td>
+            <td> {{user.permanent_address}}</td>
+            <td>
+                <button (click)="updateUser(user.id)" class="btn btn-info">Update</button>
+            </td> 
+        </tr>
+    </tbody>
+
+
+
+</table>
