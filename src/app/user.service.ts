@@ -11,6 +11,7 @@ export class UserService {
 
   private baseURL1="http://localhost:8080/user/getAll";
   private baseURL2="http://localhost:8080/user/save";
+  private baseURL3="http://localhost:8080/user/update";
 
   constructor(private httpClient: HttpClient) { }
 
@@ -20,5 +21,13 @@ export class UserService {
 
   createUser(user:User):Observable<Object>{
     return this.httpClient.post<Object>(`${this.baseURL2}`,user);
+  }
+
+  updateUser(user:User):Observable<object>{
+    return this.httpClient.put<object>(`${this.baseURL3}/${user.user_id}`,user);
+  }
+  
+  grtUserById(id:number):Observable<User>{
+    return this.httpClient.get<User>(`${this.baseURL3}/$(id)`);
   }
 }

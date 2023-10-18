@@ -8,8 +8,7 @@ const routes: Routes = [
 {path:'users', component:UserListComponent},
 {path:'create-user',component:CreateUserComponent},
 {path:'',redirectTo:'users',pathMatch:'full'},
-{path:'update-user/:id',component: UpdateUserComponent}
-
+{path:'update-user/:id',component:UpdateUserComponent}
 ];
 
 @NgModule({
