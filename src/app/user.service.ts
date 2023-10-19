@@ -22,12 +22,12 @@ export class UserService {
   createUser(user:User):Observable<Object>{
     return this.httpClient.post<Object>(`${this.baseURL2}`,user);
   }
-
-  updateUser(user:User):Observable<object>{
-    return this.httpClient.put<object>(`${this.baseURL3}/${user.user_id}`,user);
+ 
+  getUserById(user_id:number):Observable<User>{
+    return this.httpClient.get<User>(`${this.baseURL3}/${user_id}`);
   }
-  
-  grtUserById(id:number):Observable<User>{
-    return this.httpClient.get<User>(`${this.baseURL3}/$(id)`);
+
+  updateUser(user_id: number, user: User): Observable<Object>{
+    return this.httpClient.put(`${this.baseURL3}/${user_id}`, user);
   }
 }
