@@ -1,6 +1,7 @@
 <h2>User-list</h2>
 <table class="table table-striped">
     <thead>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <tr>
             <th>first_name</th>
             <th>last_name</th>
@@ -16,7 +17,12 @@
             <td> {{user.current_address}}</td>
             <td> {{user.permanent_address}}</td>
             <td>
-                <button (click)="updateUser(user.user_id)" class="btn btn-info">Update</button>
+                <button (click)="updateUser(user.user_id)" class="btn btn-primary">Update</button>
+                <!-- <button (click)="deleteUser(user.user_id)" class="btn btn-danger" style="margin-left:10px;"> Delete</button> -->
+                <button (click)="deleteUser(user.user_id)" class="btn btn-danger" style="margin-left:10px;">
+                    <mat-icon>delete</mat-icon>
+                  </button>
+                <button (click) = "userDetails(user.user_id)" class = "btn btn-primary" style="margin-left: 10px"> View</button>
             </td> 
         </tr>
     </tbody>
@@ -24,3 +30,8 @@
 
 
 </table>
+<mat-paginator [length]="100"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25, 100]"
+              aria-label="Select page">
+</mat-paginator>

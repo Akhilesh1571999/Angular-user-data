@@ -12,6 +12,7 @@ export class UserService {
   private baseURL1="http://localhost:8080/user/getAll";
   private baseURL2="http://localhost:8080/user/save";
   private baseURL3="http://localhost:8080/user/update";
+  private baseURL4="http://localhost:8080/user/delete";
 
   constructor(private httpClient: HttpClient) { }
 
@@ -29,5 +30,9 @@ export class UserService {
 
   updateUser(user_id: number, user: User): Observable<Object>{
     return this.httpClient.put(`${this.baseURL3}/${user_id}`, user);
+  }
+
+  deleteUser(user_id:number):Observable<Object>{
+    return this.httpClient.delete(`${this.baseURL4}/${user_id}`);
   }
 }

@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./update-user.component.css']
 })
 export class UpdateUserComponent implements OnInit{
- user_id:number=0;
+  user_id:number=0;
   user: User=new User();
   constructor(private userService:UserService,
     private route:ActivatedRoute,
