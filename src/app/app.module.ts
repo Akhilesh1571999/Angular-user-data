@@ -8,11 +8,14 @@ import { UserListComponent } from './user-list/user-list.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { FormsModule } from '@angular/forms';
 import { UpdateUserComponent } from './update-user/update-user.component';
-import { UserDetailsComponent } from './user-details/user-details.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { LoginComponent } from './login/login.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
 
 
 @NgModule({
@@ -21,6 +24,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     UserListComponent,
     CreateUserComponent,
     UpdateUserComponent,
+    LoginComponent,
     UserDetailsComponent,
   ],
   imports: [
@@ -31,8 +35,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatIconModule,
     MatTableModule,
     MatPaginatorModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatButtonModule, 
+    MatInputModule
   ],
+  exports: [
+    MatButtonModule, 
+    MatInputModule],
   providers: [],
   bootstrap: [AppComponent]
 })
