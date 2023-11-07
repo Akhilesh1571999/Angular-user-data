@@ -9,11 +9,11 @@ import { User } from './user';
 })
 export class UserService {
 
-  private baseURL1="http://localhost:8080/user/getAll";
-  private baseURL2="http://localhost:8080/user/save";
-  private baseURL3="http://localhost:8080/user/update";
-  private baseURL4="http://localhost:8080/user/delete";
-  private baseURL5="http://localhost:8080/user";
+  private baseURL1="http://localhost:8081/user/getAll";
+  private baseURL2="http://localhost:8081/user/save";
+  private baseURL3="http://localhost:8081/user/update";
+  private baseURL4="http://localhost:8081/user/delete";
+  private baseURL5="http://localhost:8081/user";
 
   constructor(private httpClient: HttpClient) { }
 
