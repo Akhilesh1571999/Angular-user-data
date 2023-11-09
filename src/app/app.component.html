@@ -1,3 +1,4 @@
+
 <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <ul class="navbar-nav">
@@ -6,7 +7,9 @@
 
     <div *ngIf="user">
     </div> -->
-<!-- <a routerLink="users" routerLinkActive="active" class="nav-link">User-list</a>  -->
+<a routerLink="users" routerLinkActive="active" class="nav-link">User-list</a> 
+<button (click)="login()">login</button>
+ <button (click)="logout()">logout</button>
 <a routerLink="users" routerLinkActive="active" class="nav-link">
     <mat-icon>home</mat-icon></a>
 </li>
@@ -23,7 +26,8 @@
 
 <h1 class="text-center"> {{title}} </h1>
 <div class="container">
-    <router-outlet></router-outlet>
+    
+    <router-outlet ngIf="token"></router-outlet>
 </div>
 <!-- <footer class="footer">
     <div class="container">

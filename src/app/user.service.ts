@@ -13,7 +13,7 @@ export class UserService {
   private baseURL2="http://localhost:8081/user/save";
   private baseURL3="http://localhost:8081/user/update";
   private baseURL4="http://localhost:8081/user/delete";
-  private baseURL5="http://localhost:8081/user";
+  private baseURL5="http://localhost:8081";
 
   constructor(private httpClient: HttpClient) { }
 
@@ -38,6 +38,6 @@ export class UserService {
   }
 
   login(user: any): Observable<any> {
-    return this.httpClient.post(`${this.baseURL5}/login`, user);
+    return this.httpClient.post(`${this.baseURL5}`, user);
   }
 }

@@ -19,8 +19,10 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
-import { LoginComponent } from './login/login.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
+import { HomeComponent } from './home/home.component';
+import { OAuthModule } from 'angular-oauth2-oidc';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -29,8 +31,8 @@ import { UserDetailsComponent } from './user-details/user-details.component';
     UserListComponent,
     CreateUserComponent,
     UpdateUserComponent,
-    LoginComponent,
     UserDetailsComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +45,9 @@ import { UserDetailsComponent } from './user-details/user-details.component';
     BrowserAnimationsModule,
     MatButtonModule, 
     MatInputModule,
-    SocialLoginModule
+    SocialLoginModule,
+    OAuthModule.forRoot(),
+    ReactiveFormsModule
   ],
   exports: [
     MatButtonModule, 
@@ -56,10 +60,8 @@ import { UserDetailsComponent } from './user-details/user-details.component';
         providers: [
           {
             id: GoogleLoginProvider.PROVIDER_ID,
-            provider: new GoogleLoginProvider(
-              '712388663959-goslvam45ijp172ooa7dm2u1m0u1p1oi.apps.googleusercontent.com'
-            )
-          }
+            provider: new GoogleLoginProvider('712388663959-a8ijlk7g9p717jul6jqljgp0b92okjah.apps.googleusercontent.com'),
+          },
         ],
         onError: (err) => {
           console.error(err);
